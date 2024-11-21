@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
 import StateProvider from "@/lib/StateProvider";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Supabase ToDo NextJs",
@@ -16,8 +17,9 @@ export default function RootLayout({
   return (
     <StateProvider>
       <html lang="en">
-        <body className="antialiased">
+        <body className="antialiased font-trebuchetMs flex flex-col min-h-screen">
           {children}
+          <Footer />
           <Toaster position="top-center" />
         </body>
       </html>
